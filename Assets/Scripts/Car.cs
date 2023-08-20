@@ -5,6 +5,8 @@ using UnityEngine;
 public class Car : MonoBehaviour
 {
 
+    public Transform CenterOfMass;
+
     public WheelCollider wheelColliderLeftFront;
     public WheelCollider wheelColliderRightFront;
     public WheelCollider wheelColliderLeftBack;
@@ -17,12 +19,22 @@ public class Car : MonoBehaviour
 
     public float motorTorque = 100f;
     public float maxSteer = 20f;
+    private Rigidbody _rigidBody;
+
+    void Start()
+    {
+        _rigidBody = GetComponent<Rigidbody>();
+        _rigidBody.centerOfMass = CenterOfMass.localPosition;
+    }
 
 
     void FixedUpdate()
     {
         wheelColliderRightBack.motorTorque = Input.GetAxis("Vertical") * motorTorque;
         wheelColliderLeftBack.motorTorque = Input.GetAxis("Vertical") * motorTorque;
+        wheelColliderLeftFront.steerAngle = Input.GetAxis("Horizontal") * maxSteer;
+        wheelColliderRightFront.steerAngle = Input.GetAxis("Horizontal") * maxSteer;
+
     }
 
     void Update()
@@ -33,5 +45,17 @@ public class Car : MonoBehaviour
         wheelColliderLeftFront.GetWorldPose(out pos, out rot);
         wheelLeftFront.position = pos;
         wheelLeftFront.rotation = rot;
+
+        wheelColliderRightFront.GetWorldPose(out pos, out rot);
+        wheelRightFront.position = pos;
+        wheelRightFront.rotation = rot * Quaternion.Euler(0,180,0);
+
+        wheelColliderLeftBack.GetWorldPose(out pos, out rot);
+        wheelLeftBack.position = pos;
+        wheelLeftBack.rotation = rot;
+
+        wheelColliderRightBack.GetWorldPose(out pos, out rot);
+        wheelRightBack.position = pos;
+        wheelRightBack.rotation = rot * Quaternion.Euler(0, 180, 0);
     }
 }

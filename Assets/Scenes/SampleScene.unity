@@ -490,6 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b9e665889aef141a6426790e0096db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CenterOfMass: {fileID: 0}
   wheelColliderLeftFront: {fileID: 1057548308}
   wheelColliderRightFront: {fileID: 2026735139}
   wheelColliderLeftBack: {fileID: 732381983}
@@ -532,6 +533,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &713031759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 713031760}
+  m_Layer: 0
+  m_Name: CenterOfMass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &713031760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713031759}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.01, y: 0.43, z: 0.16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3274044465489777151}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &732381981
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,8 +791,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.076151974, y: -0.41394317, z: 0.0345042, w: 0.9064554}
-  m_LocalPosition: {x: -618.1322, y: 4.7348576, z: 251.03189}
+  m_LocalRotation: {x: 0.11845112, y: -0.356055, z: 0.045415632, w: 0.92581403}
+  m_LocalPosition: {x: -620.1077, y: 8.822548, z: 245.7428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1945,6 +1977,7 @@ Transform:
   - {fileID: 234388313}
   - {fileID: 1498457284}
   - {fileID: 1650027771}
+  - {fileID: 713031760}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &3274044465489777152
@@ -1955,7 +1988,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2748443395648801605}
   serializedVersion: 4
-  m_Mass: 500
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1986,6 +2019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b9e665889aef141a6426790e0096db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CenterOfMass: {fileID: 713031760}
   wheelColliderLeftFront: {fileID: 151406230}
   wheelColliderRightFront: {fileID: 42653660}
   wheelColliderLeftBack: {fileID: 1459094044}
@@ -1994,8 +2028,8 @@ MonoBehaviour:
   wheelRightFront: {fileID: 4721103758470890559}
   wheelLeftBack: {fileID: 3429991470745085422}
   wheelRightBack: {fileID: 98835178127057173}
-  motorTorque: 5000
-  maxSteer: 20
+  motorTorque: 1000
+  maxSteer: 30
 --- !u!4 &3429991470745085422
 Transform:
   m_ObjectHideFlags: 0

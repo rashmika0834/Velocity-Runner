@@ -13,9 +13,11 @@ public class Car : MonoBehaviour
     public float Throttle { get; set; }
    
     private Rigidbody _rigidBody;
+    private Wheels[] wheels;
 
     void Start()
     {
+        wheels = GetComponentsInChildren<Wheels>();
         _rigidBody = GetComponent<Rigidbody>();
         _rigidBody.centerOfMass = CenterOfMass.localPosition;
     }
@@ -23,6 +25,13 @@ public class Car : MonoBehaviour
 
     void Update()
     {
+        Steer = GameManager.Instance.InputController.SteerInput;
+        Throttle = GameManager.Instance.InputController.ThrottelInput;
 
+        foreach (var Wheel in wheels)
+        {
+            Wheel.SteerAngle = Steer * maxSteer;
+            Wheel.Torque = Throttle * motorTorque;
+        }
     }
 }

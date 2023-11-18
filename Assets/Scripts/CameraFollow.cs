@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform target; // Reference to the car's transform
-    public Vector3 offset = new Vector3(-52, 41, 1); // Camera offset from the car
+    public Vector3 offset = new Vector3(8, 54, -84); // Camera offset from the car
     public float smoothTime = 0.3f; // Smoothing time for camera movement
 
     private Vector3 velocity = Vector3.zero; // Velocity for SmoothDamp

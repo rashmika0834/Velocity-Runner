@@ -9,6 +9,7 @@ Follow the below steps in order to play the game on your own
   1. Access the zip file through - https://drive.google.com/drive/folders/1bWjtCTa97iIc7IJcnTOmib4YUW6dZzuE?usp=sharing
   2. Download the zip file and extract it.
   3. Open the Velocity Runner.exe and you are good to go.
-
 Happy Gaming 🎮😙
+
+
 ![GamingTimmyTurnerGIF](https://github.com/rashmika0834/Velocity-Runner/assets/64023498/2a3cebcf-5bf2-49d9-ba97-feec2d2839c8)
